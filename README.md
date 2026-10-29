@@ -25,3 +25,7 @@ Sin compilación: abrir `index.html` en cualquier navegador moderno.
 ## Ajustes de portada y cronología
 - El texto de introducción se acortó según lo indicado por el autor.
 - El año 2025 incluye «Estuve de voluntario 1 mes en Santa Cruz», antes de «Escuela de la vida» (2026).
+
+## Social preview (WhatsApp, Facebook y X)
+
+Los metadatos Open Graph se definen directamente en el `<head>` de `index.html`. La imagen horizontal `assets/about-me-share-2026.jpg` (1200×630 JPEG optimizado) es el arte para compartir la web. La dirección canónica es `https://jostamht.github.io/About-Me/`. Si WhatsApp conserva una imagen antigua en caché, prueba a compartir el enlace con un parámetro inocuo como `?v=20261029`.
