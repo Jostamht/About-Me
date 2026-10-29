@@ -188,3 +188,6 @@
   .faq-color .spectrum-labels{flex-wrap:wrap;font-size:9px}
 }
 @media(prefers-reduced-motion:reduce){.quest-card{transition:none}}
+
+/* Exactly five milestones remain on the education-only timeline. */
+@media(min-width:761px){.story-section .timeline{grid-template-columns:repeat(5,minmax(0,1fr))!important}}
