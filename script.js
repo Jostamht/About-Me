@@ -2,6 +2,36 @@ document.addEventListener("DOMContentLoaded",()=>{
   const progress=document.querySelector(".reading-progress");
   function updateProgress(){const max=document.documentElement.scrollHeight-window.innerHeight;progress.style.width=(max>0?(window.scrollY/max)*100:0)+"%";}
   window.addEventListener("scroll",updateProgress,{passive:true});updateProgress();
+
+  // A photographic card deck. Three crops of the same supplied photo until more images are provided.
+  const deck=document.getElementById("photo-deck");
+  if(deck){
+    const slides=[...deck.querySelectorAll(".photo-slide")];
+    const photoLabels=["RETRATO · ORIGINAL","ENCUADRE · DETALLE","ENCUADRE · EDITORIAL"];
+    let position=0;
+    const evidence=deck.querySelector("#photo-evidence-no"),counter=deck.querySelector("#photo-deck-progress"),title=deck.querySelector("#photo-deck-current");
+    function showPhoto(i){
+      position=(i+slides.length)%slides.length;
+      slides.forEach((slide,n)=>{
+        const relative=(n-position+slides.length)%slides.length;
+        slide.classList.toggle("is-active",relative===0);
+        slide.classList.toggle("is-next",relative===1);
+        slide.classList.toggle("is-back",relative===2);
+        slide.setAttribute("aria-hidden",String(relative!==0));
+      });
+      evidence.textContent="EVIDENCIA FOTOGRÁFICA Nº "+String(position+1).padStart(2,"0");
+      counter.textContent=String(position+1).padStart(2,"0")+" / "+String(slides.length).padStart(2,"0");
+      title.textContent=photoLabels[position];
+    }
+    deck.querySelector("#photo-prev")?.addEventListener("click",()=>showPhoto(position-1));
+    deck.querySelector("#photo-next")?.addEventListener("click",()=>showPhoto(position+1));
+    deck.querySelector(".photo-deck-stack")?.addEventListener("keydown",event=>{
+      if(event.key==="ArrowRight"){event.preventDefault();showPhoto(position+1);}
+      if(event.key==="ArrowLeft"){event.preventDefault();showPhoto(position-1);}
+    });
+    showPhoto(0);
+  }
+
   // Ten immutable baseline answers per question. Each visitor can contribute one local answer per card.
   const baseline=[
     [0,0,0,0,0,1,0,0,2,7],
@@ -30,9 +60,9 @@ document.addEventListener("DOMContentLoaded",()=>{
     if(valid(current))adjusted[current-1]++;
     const originalAvg=average(original),adjustedAvg=average(adjusted);
     // Original is never overwritten or hidden, even when the visitor adds a vote.
-    card.querySelector(".original-average").textContent=originalAvg.toFixed(1)+" / 10";
+    // Original baseline stays intact and is included in the visible combined average.
     card.querySelector(".metric-average").innerHTML=adjustedAvg.toFixed(1)+'<span>/10</span>';
-    card.querySelector(".chart-top span:last-child").textContent=valid(current)?"11 RESPUESTAS CON TU VOTO":"10 ENCUESTAS ORIGINALES";
+    card.querySelector(".chart-top span:last-child").textContent=valid(current)?"TU VOTO INCLUIDO":"ENCUESTA";
     const chart=card.querySelector(".histogram");
     chart.replaceChildren();
     const max=Math.max(1,...adjusted);
@@ -50,7 +80,7 @@ document.addEventListener("DOMContentLoaded",()=>{
     if(valid(current))slider.value=String(current);
     const shown=Number(slider.value);
     card.querySelector(".vote-value").textContent=shown+" / 10";
-    card.querySelector(".vote-help").textContent=valid(current)?"Tu voto está incluido en el resultado (11 en total).":"Desliza para sumar tu voto a las 10 respuestas.";
+    card.querySelector(".vote-help").textContent=valid(current)?"Tu respuesta se refleja en el promedio.":"Desliza para actualizar el resultado local.";
     card.querySelector(".vote-reset").hidden=!valid(current);
     card.classList.toggle("has-local-vote",valid(current));
     const fill=(shown-1)/9*100;
@@ -73,7 +103,6 @@ document.addEventListener("DOMContentLoaded",()=>{
     {author:"ANÓNIMO 2",text:"Que dejes de farmear bosque y entres a las mechas ndeahh"},
     {author:"ANÓNIMO 3",text:"Aventurero, le encanta viajar y una persona q logra todo lo q se propone."},
     {author:"ANÓNIMO 4",text:"Bueno primero el mensaje, hubiera sido un 10 en clave como el Perú pero no juegas ranked en dotita xd jajaja. Y. Pues mi anécdota es la vez que me creaste la cuenta de dota elegiste mi nombre Rsidex que hasta del día de hoy no sabemos el porque pero me agrada saber que fue dado por un amigo confiable como lo eres tú. Papu."},
-    {author:"ANÓNIMO 5",text:"Ojito 🙈"},
     {author:"ANÓNIMO 6",text:"🥹👍"}
   ];
   let quoteIndex=0,showAll=false;

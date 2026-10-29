@@ -44,13 +44,19 @@
           <span class="tiny-note">*No se garantiza objetividad en la muestra.</span>
         </div>
         <div class="hero-visual">
-          <div class="hero-frame">
-            <span class="photo-topline">EVIDENCIA FOTOGRÁFICA Nº 01</span>
-            <img src="assets/portrait.jpg" alt="Retrato de José Pablo sonriendo, iluminado en tonos rojos y cálidos" width="500" height="600" fetchpriority="high">
-            <span class="photo-corner" aria-hidden="true">JP / 00</span>
-            <span class="photo-overlay" aria-hidden="true"></span>
+          <div class="hero-photo-deck" id="photo-deck" role="region" aria-roledescription="carrusel" aria-label="Evidencia fotográfica, tres encuadres">
+            <div class="photo-deck-stack" tabindex="0">
+              <div class="photo-slide is-active photo-variation-original" data-photo-index="0" aria-hidden="false"><img src="assets/portrait.jpg" alt="José Pablo, retrato de frente" fetchpriority="high" decoding="async"></div>
+              <div class="photo-slide is-next photo-variation-detalle" data-photo-index="1" aria-hidden="true"><img src="assets/portrait.jpg" alt="José Pablo, acercamiento al rostro" loading="lazy" decoding="async"></div>
+              <div class="photo-slide is-back photo-variation-editorial" data-photo-index="2" aria-hidden="true"><img src="assets/portrait.jpg" alt="José Pablo, encuadre editorial del retrato" loading="lazy" decoding="async"></div>
+              <div class="photo-deck-caption"><span id="photo-evidence-no">EVIDENCIA FOTOGRÁFICA Nº 01</span><span>JP / 00</span></div>
+            </div>
+            <div class="photo-deck-toolbar">
+              <div><span class="photo-deck-current" id="photo-deck-current">RETRATO · ORIGINAL</span><span class="photo-deck-progress" id="photo-deck-progress" aria-live="polite">01 / 03</span></div>
+              <div class="photo-deck-arrows"><button type="button" id="photo-prev" aria-label="Foto anterior">←</button><button type="button" id="photo-next" aria-label="Foto siguiente">→</button></div>
+            </div>
+            <span class="photo-deck-hint">Tres encuadres de una fotografía. Puedes cambiar las otras dos después.</span>
           </div>
-          <span class="visual-note">SÍ, ESTE SOY YO. <span aria-hidden="true">↗</span></span>
         </div>
       </div>
       <a href="#encuesta" class="hero-scroll">SCROLL PARA CONOCERME <span aria-hidden="true">↓</span></a>
@@ -63,58 +69,58 @@
           <p>Hice una breve encuesta entre mis amigos. Los resultados, completamente científicos* (más o menos), fueron estos.</p>
         </div>
         <div class="chart-grid"><article class="chart-card reveal" data-metric="0" data-series="0,0,0,0,0,1,0,0,2,7">
-  <div class="chart-top"><span>01</span><span>10 ENCUESTAS ORIGINALES</span></div>
+  <div class="chart-top"><span>01</span><span>ENCUESTA</span></div>
   <h3>¿Qué tan confiable soy?</h3>
   <div class="chart-answer"><strong class="metric-average">9.4<span>/10</span></strong><span class="chart-sidenote">Formato APA<br>casi certificado</span></div>
-  <div class="metric-original">Resultado original: <strong class="original-average">9.4 / 10</strong> <span>· 10 votos</span></div>
+  
   <div class="histogram" role="img" aria-label="Resultados originales de la encuesta"></div>
   <p class="chart-caption">1 = Fuente: de los deseos / 10 = Formato APA</p>
   <div class="card-vote" aria-label="Añadir tu evaluación">
     <div class="card-vote-top"><label for="vote-0">¿Y tú qué opinas?</label><output class="vote-value" for="vote-0">8 / 10</output></div>
     <input class="card-vote-slider" id="vote-0" type="range" min="1" max="10" step="1" value="8" aria-describedby="vote-help-0">
-    <div class="card-vote-bottom"><small id="vote-help-0" class="vote-help">Desliza para sumar tu voto a las 10 respuestas.</small><button class="vote-reset" type="button" data-reset="0" hidden>Restablecer</button></div>
+    <div class="card-vote-bottom"><small id="vote-help-0" class="vote-help">Desliza para actualizar el resultado local.</small><button class="vote-reset" type="button" data-reset="0" hidden>Restablecer</button></div>
   </div>
 </article>
 <article class="chart-card reveal" data-metric="1" data-series="0,0,0,0,0,0,3,1,3,3">
-  <div class="chart-top"><span>02</span><span>10 ENCUESTAS ORIGINALES</span></div>
+  <div class="chart-top"><span>02</span><span>ENCUESTA</span></div>
   <h3>¿Qué tan carismático soy?</h3>
   <div class="chart-answer"><strong class="metric-average">8.6<span>/10</span></strong><span class="chart-sidenote">El encanto<br>es debatible</span></div>
-  <div class="metric-original">Resultado original: <strong class="original-average">8.6 / 10</strong> <span>· 10 votos</span></div>
+  
   <div class="histogram" role="img" aria-label="Resultados originales de la encuesta"></div>
   <p class="chart-caption">1 = NPC / 10 = Clave como el Perú</p>
   <div class="card-vote" aria-label="Añadir tu evaluación">
     <div class="card-vote-top"><label for="vote-1">¿Y tú qué opinas?</label><output class="vote-value" for="vote-1">8 / 10</output></div>
     <input class="card-vote-slider" id="vote-1" type="range" min="1" max="10" step="1" value="8" aria-describedby="vote-help-1">
-    <div class="card-vote-bottom"><small id="vote-help-1" class="vote-help">Desliza para sumar tu voto a las 10 respuestas.</small><button class="vote-reset" type="button" data-reset="1" hidden>Restablecer</button></div>
+    <div class="card-vote-bottom"><small id="vote-help-1" class="vote-help">Desliza para actualizar el resultado local.</small><button class="vote-reset" type="button" data-reset="1" hidden>Restablecer</button></div>
   </div>
 </article>
 <article class="chart-card reveal" data-metric="2" data-series="0,0,0,0,0,0,0,1,3,6">
-  <div class="chart-top"><span>03</span><span>10 ENCUESTAS ORIGINALES</span></div>
+  <div class="chart-top"><span>03</span><span>ENCUESTA</span></div>
   <h3>¿Soy un buen tipo?</h3>
   <div class="chart-answer"><strong class="metric-average">9.5<span>/10</span></strong><span class="chart-sidenote">La gente<br>ha hablado</span></div>
-  <div class="metric-original">Resultado original: <strong class="original-average">9.5 / 10</strong> <span>· 10 votos</span></div>
+  
   <div class="histogram" role="img" aria-label="Resultados originales de la encuesta"></div>
   <p class="chart-caption">1 = Meh / 10 = T-I-P-A-Z-O</p>
   <div class="card-vote" aria-label="Añadir tu evaluación">
     <div class="card-vote-top"><label for="vote-2">¿Y tú qué opinas?</label><output class="vote-value" for="vote-2">8 / 10</output></div>
     <input class="card-vote-slider" id="vote-2" type="range" min="1" max="10" step="1" value="8" aria-describedby="vote-help-2">
-    <div class="card-vote-bottom"><small id="vote-help-2" class="vote-help">Desliza para sumar tu voto a las 10 respuestas.</small><button class="vote-reset" type="button" data-reset="2" hidden>Restablecer</button></div>
+    <div class="card-vote-bottom"><small id="vote-help-2" class="vote-help">Desliza para actualizar el resultado local.</small><button class="vote-reset" type="button" data-reset="2" hidden>Restablecer</button></div>
   </div>
 </article>
 <article class="chart-card reveal" data-metric="3" data-series="0,0,0,0,0,0,1,5,1,3">
-  <div class="chart-top"><span>04</span><span>10 ENCUESTAS ORIGINALES</span></div>
+  <div class="chart-top"><span>04</span><span>ENCUESTA</span></div>
   <h3>¿Qué tan inteligente me ves?</h3>
   <div class="chart-answer"><strong class="metric-average">8.6<span>/10</span></strong><span class="chart-sidenote">Aprobado<br>por mis amigos</span></div>
-  <div class="metric-original">Resultado original: <strong class="original-average">8.6 / 10</strong> <span>· 10 votos</span></div>
+  
   <div class="histogram" role="img" aria-label="Resultados originales de la encuesta"></div>
   <p class="chart-caption">1 = Explicarte con chubis / 10 = Einstein 2</p>
   <div class="card-vote" aria-label="Añadir tu evaluación">
     <div class="card-vote-top"><label for="vote-3">¿Y tú qué opinas?</label><output class="vote-value" for="vote-3">8 / 10</output></div>
     <input class="card-vote-slider" id="vote-3" type="range" min="1" max="10" step="1" value="8" aria-describedby="vote-help-3">
-    <div class="card-vote-bottom"><small id="vote-help-3" class="vote-help">Desliza para sumar tu voto a las 10 respuestas.</small><button class="vote-reset" type="button" data-reset="3" hidden>Restablecer</button></div>
+    <div class="card-vote-bottom"><small id="vote-help-3" class="vote-help">Desliza para actualizar el resultado local.</small><button class="vote-reset" type="button" data-reset="3" hidden>Restablecer</button></div>
   </div>
 </article></div>
-<p class="survey-disclaimer">Las 10 encuestas iniciales permanecen como base. Las distribuciones se reconstruyeron proporcionalmente a partir de las gráficas del PDF. Tu evaluación modifica solo tu vista, no la de otras personas.</p>
+<p class="survey-disclaimer">Los datos iniciales se conservan en el cálculo. Las distribuciones se aproximaron a partir del PDF y tu evaluación solo modifica tu vista.</p>
 
         <div class="quote-heading"><div><span class="kicker">TESTIMONIOS / AMIGOS REALES (SUPUESTAMENTE)</span><h3>¿Y qué dice la gente?</h3></div></div>
 <div class="testimonial-slider" aria-roledescription="carrusel" aria-label="Seis testimonios de amigos">
@@ -126,7 +132,7 @@
   </div>
   <div class="testimonial-nav">
     <button class="testimonial-arrow" id="quote-prev" type="button" aria-label="Testimonio anterior">←</button>
-    <span id="quote-counter" aria-live="polite">01 <span>/ 06</span></span>
+    <span id="quote-counter" aria-live="polite">01 / 05</span>
     <button class="testimonial-arrow" id="quote-next" type="button" aria-label="Testimonio siguiente">→</button>
   </div>
 </div>
@@ -138,10 +144,8 @@
     <section id="historia" class="section story-section">
       <div class="container">
         <div class="section-heading"><div><span class="kicker">02 / LORE PERSONAL</span><h2>¿Pero <em>quién</em><br>soy?</h2></div><p>Mi nombre ya lo sabes. Te cuento un poco sobre mi recorrido y las cosas que he ido aprendiendo, con sus altos y bajos.</p></div>
-        <div class="timeline-block reveal">
-          <div class="timeline-title"><span class="timeline-icon">↗</span><h3>Mi educación y otras aventuras</h3><span>2000 — 2025</span></div>
-          <ol class="timeline"><li><div class="timeline-info"><time>2000</time><strong>Nací.</strong></div></li><li><div class="timeline-info"><time>2011</time><strong>Estudié inglés en el CBA</strong></div></li><li><div class="timeline-info"><time>2018</time><strong>Estudié Publicidad y Marketing</strong></div></li><li><div class="timeline-info"><time>2023</time><strong>Estudié Diseño y Producción</strong></div></li><li><div class="timeline-info"><time>2025</time><strong>Escuela de la vida</strong><small>Aprendizaje continuo.</small></div></li></ol>
-        </div>
+        <div class="timeline-block reveal"><div class="timeline-title"><span class="timeline-icon">↗</span><h3>Mi historia y otras aventuras</h3><span>2000 — 2026</span></div><div class="timeline-chapters"><div class="timeline-chapter"><div class="chapter-label"><span>CAPÍTULO 01</span><span>2000 — 2015</span></div><ol class="timeline milestone-rail"><li><div class="timeline-info"><time>2000</time><strong>Nací.</strong></div></li><li><div class="timeline-info"><time>2006</time><strong>Arruiné mi vida con la PS2</strong></div></li><li><div class="timeline-info"><time>2008</time><strong>Aprendí a nadar</strong></div></li><li><div class="timeline-info"><time>2011</time><strong>Estudié inglés en el CBA</strong></div></li><li><div class="timeline-info"><time>2015</time><strong>Arruiné mi vida con el anime</strong></div></li></ol></div>
+<div class="timeline-chapter"><div class="chapter-label"><span>CAPÍTULO 02</span><span>2016 — 2026</span></div><ol class="timeline milestone-rail"><li><div class="timeline-info"><time>2016</time><strong>Arruiné mi vida con los mangas</strong></div></li><li><div class="timeline-info"><time>2018</time><strong>Estudié Publicidad y Marketing</strong></div></li><li><div class="timeline-info"><time>2021</time><strong>Me agarré a puñetes legales con un juez</strong></div></li><li><div class="timeline-info"><time>2023</time><strong>Estudié Diseño y Producción</strong></div></li><li><div class="timeline-info"><time>2026</time><strong>Escuela de la vida</strong><small>Aquí tamos</small></div></li></ol></div></div></div>
         <p class="story-note">¿Hay algo más que explicar dentro de esa línea? Claro que sí. <strong>Puedes preguntármelo.</strong></p>
       </div>
     </section>
@@ -158,7 +162,7 @@
   <div class="container quest-layout">
     <div class="quest-intro">
       <div><span class="kicker">04 / SIDE QUESTS</span><h2>Siempre hay <em>algo nuevo</em> que aprender.</h2></div>
-      <p>Entre tantas cosas que me llaman la atención, estas son algunas de mis pequeñas aventuras. Los niveles son aproximaciones divertidas, no certificaciones de habilidad.</p>
+      <p>Acá tenés un par de misiones secundarias en lasa que ando trabajando, a lo mejor compartimos algún hobby</p>
     </div>
     <div class="quest-grid"><article class="quest-card reveal " style="--tile-order:0">
    <div class="quest-card-head"><span class="quest-icon"><svg viewBox="0 0 24 24" width="27" height="27" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6.5 6.5 11 11M3 10l7-7m4 18 7-7M2 13l11-11m-1 20 10-10" /></svg></span><span class="quest-index">01 / 10</span></div>
@@ -220,8 +224,9 @@
       <div class="container faq-layout">
         <div><span class="kicker">06 / PREGUNTAS FRECUENTES</span><h2>Q&A<span class="punct">.</span></h2><p>Todo lo que probablemente no necesitabas saber, pero igual te voy a contar.</p></div>
         <div class="faq-list">
-          <details open><summary>¿No te da vergüenza?<span class="faq-plus"></span></summary><p>Sí, sí me da bastante. No sé qué me pasó al hacer esto. Pero me parece que vale la pena.</p></details>
+          <details open><summary>¿No te da vergüenza?<span class="faq-plus"></span></summary><p>Sí, sí me da bastante. No sé qué me pasó al hacer esto. Pero me parece que uno tiene que adaptarse o morir, además me divertí mucho haciendo esto hahahh.</p></details>
           <details><summary>¿Dulce o salado?<span class="faq-plus"></span></summary><p>Salado. Me empalaga lo dulce, así que no podría comerlo todo el tiempo.</p></details>
+          <details><summary>¿Frío o calor?<span class="faq-plus"></span></summary><p>Antes era team frio, pero ahora soy más de team caliente, pero aprecio las ventajas de ambos</p></details>
           <details open class="faq-color"><summary>¿Color favorito?<span class="faq-plus"></span></summary>
             <p>Me gustan todos los colores, pero <strong>azul, celeste, turquesa, morado, verdes y naranjas.</strong></p>
             <div class="favorite-spectrum" role="img" aria-label="Degradado de azul, celeste, turquesa, morado, verde y naranja"></div>

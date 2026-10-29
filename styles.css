@@ -191,3 +191,65 @@
 
 /* Exactly five milestones remain on the education-only timeline. */
 @media(min-width:761px){.story-section .timeline{grid-template-columns:repeat(5,minmax(0,1fr))!important}}
+
+/* Update: image covers that fill their frames, with an intentional central crop. */
+.media-grid .media-card .book-cover-wrap img{object-fit:cover!important;object-position:center center!important}
+.media-grid .media-card .book-cover-wrap{aspect-ratio:3 / 4!important;overflow:hidden!important}
+/* New dual-rail timeline: alternating levels, readable across desktop/tablet/mobile. */
+.timeline-chapters{display:grid;grid-template-columns:1fr;gap:17px}
+.timeline-chapter{padding:12px 0 7px}
+.chapter-label{display:flex;justify-content:space-between;align-items:center;gap:14px;color:#9c8376;letter-spacing:.16em;font-size:10px;font-weight:800;padding:0 0 0;max-width:100%}
+.chapter-label span:last-child{color:#bc8b63}
+.story-section .timeline.milestone-rail{display:grid!important;grid-template-columns:repeat(5,minmax(0,1fr))!important;align-items:center!important;position:relative!important;height:290px!important;margin:4px 0 0!important;padding:0!important;border:0!important}
+.story-section .timeline.milestone-rail:before{content:"";position:absolute;left:0;right:0;top:50%;height:1px;background:linear-gradient(90deg,#8f7370,#ac8c72,#594848);display:block!important}
+.story-section .timeline.milestone-rail li{position:relative;min-width:0;min-height:0!important;height:100%!important;flex:initial;padding:0!important;overflow:visible!important}
+.story-section .timeline.milestone-rail li:before{content:"";position:absolute;z-index:3;left:0!important;top:calc(50% - 7px)!important;width:14px;height:14px;background:#f5e2cf;border:4px solid #171011;border-radius:50%}
+.story-section .timeline.milestone-rail li:after{content:"";position:absolute;left:7px!important;top:calc(50% - 34px)!important;width:1px!important;height:34px!important;background:var(--gold)}
+.story-section .timeline.milestone-rail li:nth-child(even):after{top:50%!important;height:35px!important}
+.story-section .timeline.milestone-rail li:nth-child(3n):after{top:calc(50% - 53px)!important;height:53px!important}
+.story-section .timeline.milestone-rail li:nth-child(even) .timeline-info{top:calc(50% + 46px)!important;bottom:auto!important}
+.story-section .timeline.milestone-rail li:nth-child(odd) .timeline-info{top:auto!important;bottom:calc(50% + 45px)!important}
+.story-section .timeline.milestone-rail li:nth-child(3n) .timeline-info{top:auto!important;bottom:calc(50% + 65px)!important}
+.story-section .timeline.milestone-rail .timeline-info{position:absolute;left:0;max-width:100%;width:calc(100% - 14px);padding-right:8px}
+.story-section .timeline.milestone-rail .timeline-info time{display:block;font:700 17px "Space Grotesk",sans-serif;color:var(--gold);margin:0 0 9px}
+.story-section .timeline.milestone-rail .timeline-info strong{display:block;font-size:13px;line-height:1.4;overflow-wrap:break-word;max-width:200px}
+.story-section .timeline.milestone-rail .timeline-info small{display:block;font-size:11px;color:#a88e7a;margin-top:5px}
+.story-section .timeline-title{margin-bottom:22px}
+.story-section .timeline-block{padding-bottom:24px}
+/* Rotating photograph / stacked playing cards. */
+.hero-photo-deck{width:100%;position:relative;isolation:isolate}
+.photo-deck-stack{width:calc(100% - 18px);aspect-ratio:4 / 4.85;position:relative;outline-offset:7px}
+.photo-slide{position:absolute;inset:0;overflow:hidden;border:1px solid rgba(237,181,119,.32);background:#4a0a12;box-shadow:0 20px 42px rgba(0,0,0,.27);transition:transform .5s cubic-bezier(.22,.7,.2,1),filter .5s,opacity .5s;transform-origin:50% 90%;will-change:transform}
+.photo-slide img{display:block;width:100%;height:100%;object-fit:cover;object-position:center 33%}
+.photo-slide:after{content:"";position:absolute;inset:52% 0 0;background:linear-gradient(transparent,rgba(5,2,4,.66));pointer-events:none}
+.photo-slide.is-active{z-index:3;transform:translate3d(0,0,0) rotate(-1deg);filter:brightness(1)}
+.photo-slide.is-next{z-index:2;transform:translate3d(20px,13px,0) rotate(5deg) scale(.97);filter:brightness(.68)}
+.photo-slide.is-back{z-index:1;transform:translate3d(-14px,18px,0) rotate(-6deg) scale(.955);filter:brightness(.48)}
+.photo-variation-detalle img{object-position:52% 20%;transform:scale(1.25)}
+.photo-variation-editorial img{object-position:40% 17%;transform:scale(1.06);filter:saturate(.7) contrast(1.18)}
+.photo-deck-caption{position:absolute;z-index:4;inset:0;pointer-events:none;display:flex;justify-content:space-between;flex-direction:column;padding:20px;color:#fff2d9;text-shadow:0 2px 10px rgba(0,0,0,.75);font-size:10px;font-weight:800;letter-spacing:.12em}
+.photo-deck-caption span:last-child{align-self:flex-end}
+.photo-deck-toolbar{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:27px 0 0}
+.photo-deck-toolbar>div:first-child{display:flex;flex-wrap:wrap;gap:9px 15px;align-items:center}
+.photo-deck-current{color:#e6b986;font-size:10px;letter-spacing:.12em;font-weight:800}
+.photo-deck-progress{color:#cabbb1;font-size:12px;font-weight:800;white-space:nowrap}
+.photo-deck-arrows{display:flex;gap:7px}
+.photo-deck-arrows button{width:42px;height:42px;border:1px solid #9c7351;background:rgba(32,21,22,.94);color:var(--gold);border-radius:50%;cursor:pointer;font-size:21px;line-height:1;transition:background .2s,transform .2s}
+.photo-deck-arrows button:hover{background:#50312a;transform:translateY(-2px)}
+.photo-deck-hint{display:block;font-size:10px;color:#927d73;margin:12px 0 0;line-height:1.5}
+@media(max-width:760px){
+ .story-section .timeline.milestone-rail{display:flex!important;flex-direction:column!important;height:auto!important;align-items:stretch!important;margin:20px 0 15px!important;padding:0 0 0 15px!important;border-left:1px solid #78675e!important}
+ .story-section .timeline.milestone-rail:before{display:none!important}
+ .story-section .timeline.milestone-rail li{height:auto!important;min-height:82px!important;padding:0 0 22px 23px!important}
+ .story-section .timeline.milestone-rail li:before{top:8px!important;left:-23px!important}
+ .story-section .timeline.milestone-rail li:after,.story-section .timeline.milestone-rail li:nth-child(even):after,.story-section .timeline.milestone-rail li:nth-child(3n):after{left:-12px!important;top:15px!important;width:21px!important;height:1px!important}
+ .story-section .timeline.milestone-rail li:nth-child(even){padding-left:45px!important}
+ .story-section .timeline.milestone-rail li:nth-child(3n){padding-left:32px!important}
+ .story-section .timeline.milestone-rail .timeline-info,.story-section .timeline.milestone-rail li:nth-child(even) .timeline-info,.story-section .timeline.milestone-rail li:nth-child(odd) .timeline-info,.story-section .timeline.milestone-rail li:nth-child(3n) .timeline-info{position:relative!important;top:auto!important;bottom:auto!important;left:0!important;width:100%!important;max-width:100%!important;padding:0!important}
+ .story-section .timeline.milestone-rail .timeline-info strong{max-width:100%;font-size:15px}
+ .timeline-chapters{gap:2px}
+ .photo-deck-stack{max-width:485px;margin:auto}
+ .photo-deck-toolbar{max-width:485px;margin:28px auto 0}
+ .photo-deck-hint{max-width:485px;margin:12px auto 0}
+}
+@media(prefers-reduced-motion:reduce){.photo-slide{transition:none}.photo-deck-arrows button{transition:none}}

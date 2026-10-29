@@ -13,3 +13,11 @@ Web personal estática adaptada del PDF de 2025.
 - Spotify, meme y enlaces de WhatsApp permanecen.
 
 Sin compilación: abrir `index.html` en cualquier navegador moderno.
+
+## Actualización posterior — octubre 2026
+- La línea del tiempo ahora incluye los hitos de 2006, 2008, 2015, 2016 y 2021; «Escuela de la vida» pasa a 2026.
+- Se elimina el comentario del Anónimo 5. El carrusel muestra los cinco comentarios restantes.
+- Las tarjetas de encuesta dejan de mostrar los textos «10 encuestas originales» y «Resultado original». Las diez valoraciones base permanecen en memoria y se combinan con el voto local del visitante.
+- Las portadas pasan a `object-fit: cover` con recorte central, para llenar completamente sus marcos.
+- Se actualizan Side Quests y Q&A, incluyendo «¿Frío o calor?».
+- La baraja de portada muestra tres composiciones de **una única fotografía aportada por el autor**. Para incluir tres fotos distintas, sustituir las fuentes de dos tarjetas por imágenes nuevas.
