@@ -253,3 +253,24 @@
  .photo-deck-hint{max-width:485px;margin:12px auto 0}
 }
 @media(prefers-reduced-motion:reduce){.photo-slide{transition:none}.photo-deck-arrows button{transition:none}}
+
+/* Four real photographs in the opening deck (one original + three new uploads). */
+.photo-slide.is-deep{
+  z-index:0;
+  transform:translate3d(-20px,27px,0) rotate(-11deg) scale(.93);
+  filter:brightness(.35);
+}
+.photo-variation-portrait img{object-position:center 30%}
+.photo-variation-saladix img{object-position:center 48%}
+.photo-variation-running img{object-position:46% 45%}
+.photo-variation-trekking img{object-position:48% 46%}
+.hero-copy>p:nth-of-type(3){margin-bottom:0}
+.hero-copy>p strong em{font-style:italic;color:var(--gold)}
+@media (min-width:761px){
+  .story-section .timeline-chapter:nth-child(2) .timeline.milestone-rail{
+    grid-template-columns:repeat(6,minmax(0,1fr))!important;
+  }
+}
+@media (min-width:761px) and (max-width:930px){
+  .story-section .timeline.milestone-rail .timeline-info strong{font-size:12px}
+}

@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded",()=>{
   const deck=document.getElementById("photo-deck");
   if(deck){
     const slides=[...deck.querySelectorAll(".photo-slide")];
-    const photoLabels=["RETRATO · ORIGINAL","ENCUADRE · DETALLE","ENCUADRE · EDITORIAL"];
+    const photoLabels=["RETRATO · ORIGINAL","FOTO · SALADIX","FOTO · CARRERA","FOTO · TREKKING"];
     let position=0;
     const evidence=deck.querySelector("#photo-evidence-no"),counter=deck.querySelector("#photo-deck-progress"),title=deck.querySelector("#photo-deck-current");
     function showPhoto(i){
@@ -17,6 +17,7 @@ document.addEventListener("DOMContentLoaded",()=>{
         slide.classList.toggle("is-active",relative===0);
         slide.classList.toggle("is-next",relative===1);
         slide.classList.toggle("is-back",relative===2);
+        slide.classList.toggle("is-deep",relative===3);
         slide.setAttribute("aria-hidden",String(relative!==0));
       });
       evidence.textContent="EVIDENCIA FOTOGRÁFICA Nº "+String(position+1).padStart(2,"0");
