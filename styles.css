@@ -123,3 +123,68 @@
  .media-card .book-cover-wrap{aspect-ratio:3/4!important}
 }
 @media(max-width:400px){.testimonial-bottom{display:block}.testimonial-category{display:block;margin-top:8px}.testimonial-content{min-height:275px;padding:26px 20px}.featured-quote{font-size:19px}}
+
+
+/* Side quests as a responsive mosaic, with segmented skill towers. */
+.quest-section{background:radial-gradient(ellipse at 18% 10%,rgba(142,47,46,.1),transparent 50%),#0c0a0b}
+.quest-layout{display:block}
+.quest-intro{display:grid;grid-template-columns:1.1fr .8fr;gap:56px;align-items:end;margin-bottom:35px}
+.quest-intro h2{font:700 clamp(48px,6.5vw,88px)/1.03 "Space Grotesk",sans-serif;letter-spacing:-.075em;margin:18px 0 0;max-width:760px}
+.quest-intro h2 em{font-style:normal;color:var(--gold)}
+.quest-intro>p{font-size:16px;line-height:1.7;color:#bdb0ac;margin:0 0 5px;max-width:380px}
+.quest-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));grid-auto-flow:row dense;gap:14px}
+.quest-card{min-width:0;min-height:222px;position:relative;display:flex;flex-direction:column;justify-content:space-between;padding:23px;border:1px solid #493530;border-radius:13px;overflow:hidden;isolation:isolate;background:linear-gradient(150deg,#251a1b,#151112);transition:border-color .25s,transform .25s,box-shadow .25s}
+.quest-card:nth-child(3n+2){background:linear-gradient(135deg,#2e1e1e,#191316)}
+.quest-card:nth-child(4n){background:linear-gradient(145deg,#251c20,#121113)}
+.quest-card::before{content:"";position:absolute;z-index:-1;width:175px;height:175px;right:-90px;top:-100px;background:radial-gradient(circle,rgba(226,173,105,.18),transparent 68%);pointer-events:none}
+.quest-card:hover{border-color:#a67a54;transform:translateY(-3px);box-shadow:0 16px 26px rgba(0,0,0,.16)}
+.quest-card-wide{grid-column:span 2}
+.quest-card-head{display:flex;justify-content:space-between;align-items:flex-start;gap:12px}
+.quest-icon{display:grid;place-items:center;width:53px;height:53px;flex-shrink:0;background:rgba(231,167,102,.1);border:1px solid rgba(232,176,113,.31);border-radius:14px;color:#f0bb7e}
+.quest-index{font-size:10px;letter-spacing:.15em;color:#998078;font-weight:800}
+.quest-card-copy{margin:25px 0 19px}
+.quest-card .quest-hint{display:block;color:#a88c7b;text-transform:uppercase;font-size:10px;letter-spacing:.1em;font-weight:800;margin-bottom:7px}
+.quest-card h3{font:700 clamp(19px,2.1vw,29px)/1.15 "Space Grotesk",sans-serif;letter-spacing:-.05em;margin:0;overflow-wrap:break-word}
+.quest-card-wide h3{font-size:clamp(24px,2.7vw,39px)}
+.quest-meter-row{border-top:1px solid rgba(230,175,130,.18);padding-top:18px;display:flex;align-items:flex-end;justify-content:space-between;gap:12px}
+.quest-skill-display{display:flex;align-items:flex-end;gap:4px;height:29px;min-width:0}
+.skill-segment{display:block;width:8px;height:calc(8px + var(--step)*2px);flex-shrink:1;min-width:3px;background:#4b3430;border:1px solid rgba(237,181,119,.06);border-radius:2px 2px 0 0}
+.skill-segment.is-filled{background:linear-gradient(0deg,#bb734e,#f5c67c);border-color:rgba(255,227,174,.19);box-shadow:0 0 10px rgba(224,151,70,.11)}
+.quest-percent{color:var(--gold);font:700 27px/.9 "Space Grotesk",sans-serif;letter-spacing:-.07em;white-space:nowrap}
+.quest-percent small{font-size:13px;margin-left:1px;letter-spacing:0}
+.quest-footnote{font-size:11px;color:#857771;margin:21px 0 0}
+.faq-color .favorite-spectrum{width:100%;height:28px;border-radius:8px;border:1px solid rgba(255,255,255,.17);background:linear-gradient(90deg,#1742ba 0%,#3daff2 19%,#11b7b4 38%,#7844c8 57%,#2ea75f 79%,#f39531 100%);margin:20px 0 10px;box-shadow:0 8px 24px rgba(0,0,0,.12)}
+.faq-color .spectrum-labels{display:flex;justify-content:space-between;gap:5px;color:#a89a96;font-size:10px;letter-spacing:.01em}
+@media(max-width:920px){
+  .quest-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .quest-card-wide{grid-column:span 2}
+  .quest-card{min-height:205px}
+}
+@media(max-width:760px){
+  .quest-intro{display:block;margin-bottom:29px}
+  .quest-intro h2{font-size:clamp(43px,9.2vw,65px)}
+  .quest-intro>p{margin-top:20px;font-size:14px}
+  .quest-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+  .quest-card{min-height:192px;padding:17px}
+  .quest-card-wide{grid-column:span 2}
+  .quest-card h3{font-size:clamp(18px,4.9vw,25px)}
+  .quest-card-wide h3{font-size:clamp(26px,6vw,34px)}
+  .quest-icon{width:44px;height:44px;border-radius:11px}
+  .quest-icon svg{width:23px;height:23px}
+  .quest-card-copy{margin:18px 0 15px}
+  .quest-meter-row{padding-top:14px;gap:6px}
+  .quest-skill-display{gap:3px}
+  .skill-segment{width:6px}
+  .quest-percent{font-size:24px}
+  .faq-color .spectrum-labels{font-size:8px}
+}
+@media(max-width:370px){
+  .quest-card{padding:13px;min-height:188px}
+  .quest-card h3{font-size:18px}
+  .quest-card-wide h3{font-size:25px}
+  .quest-skill-display{gap:2px}
+  .skill-segment{width:5px}
+  .quest-percent{font-size:21px}
+  .faq-color .spectrum-labels{flex-wrap:wrap;font-size:9px}
+}
+@media(prefers-reduced-motion:reduce){.quest-card{transition:none}}

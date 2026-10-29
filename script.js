@@ -73,7 +73,7 @@ document.addEventListener("DOMContentLoaded",()=>{
     {author:"ANÓNIMO 2",text:"Que dejes de farmear bosque y entres a las mechas ndeahh"},
     {author:"ANÓNIMO 3",text:"Aventurero, le encanta viajar y una persona q logra todo lo q se propone."},
     {author:"ANÓNIMO 4",text:"Bueno primero el mensaje, hubiera sido un 10 en clave como el Perú pero no juegas ranked en dotita xd jajaja. Y. Pues mi anécdota es la vez que me creaste la cuenta de dota elegiste mi nombre Rsidex que hasta del día de hoy no sabemos el porque pero me agrada saber que fue dado por un amigo confiable como lo eres tú. Papu."},
-    {author:"ANÓNIMO 5",text:"Ojito 😘"},
+    {author:"ANÓNIMO 5",text:"Ojito 🙈"},
     {author:"ANÓNIMO 6",text:"🥹👍"}
   ];
   let quoteIndex=0,showAll=false;
