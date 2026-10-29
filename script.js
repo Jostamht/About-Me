@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded",()=>{
   const deck=document.getElementById("photo-deck");
   if(deck){
     const slides=[...deck.querySelectorAll(".photo-slide")];
-    const photoLabels=["RETRATO · ORIGINAL","FOTO · SALADIX","FOTO · CARRERA","FOTO · TREKKING"];
+    const photoLabels=["FOTO · SALADIX","FOTO · CARRERA","FOTO · TREKKING"];
     let position=0;
     const evidence=deck.querySelector("#photo-evidence-no"),counter=deck.querySelector("#photo-deck-progress"),title=deck.querySelector("#photo-deck-current");
     function showPhoto(i){

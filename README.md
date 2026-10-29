@@ -20,7 +20,7 @@ Sin compilación: abrir `index.html` en cualquier navegador moderno.
 - Las tarjetas de encuesta dejan de mostrar los textos «10 encuestas originales» y «Resultado original». Las diez valoraciones base permanecen en memoria y se combinan con el voto local del visitante.
 - Las portadas pasan a `object-fit: cover` con recorte central, para llenar completamente sus marcos.
 - Se actualizan Side Quests y Q&A, incluyendo «¿Frío o calor?».
-- La baraja de portada muestra cuatro fotografías reales del autor: retrato rojo, Saladix, carrera y trekking.
+- La baraja de portada muestra tres fotografías reales del autor: Saladix, carrera y trekking; el retrato rojo no aparece en el sitio.
 
 ## Ajustes de portada y cronología
 - El texto de introducción se acortó según lo indicado por el autor.
