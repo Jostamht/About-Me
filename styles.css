@@ -76,3 +76,50 @@
 }
 @media(max-width:440px){.quote-carousel .quote-card{flex-basis:93%}.quote-counter{display:none}.chart-card .chart-answer strong{font-size:50px}}
 @media(prefers-reduced-motion:reduce){.quote-carousel{scroll-behavior:auto}}
+
+/* Patch 2026-10-29: compact self-contained poll cards, fixed one-at-a-time carousel, artwork sizing. */
+.chart-grid>.chart-card{display:flex;flex-direction:column;min-width:0}
+.chart-card .chart-answer{min-height:95px}
+.metric-original{font-size:12px;color:#b2a29c;margin:0 0 4px}
+.metric-original strong{color:#f3cc9f;font-weight:800}
+.chart-card .histogram{flex:0 0 145px}
+.chart-caption{min-height:30px}
+.card-vote{margin-top:auto;padding-top:23px;border-top:1px solid #54413a}
+.card-vote-top,.card-vote-bottom{display:flex;justify-content:space-between;gap:14px;align-items:center}
+.card-vote-top label{font-size:14px;font-weight:800;color:#f1ded0}
+.card-vote-top output{color:var(--gold);font:700 20px "Space Grotesk",sans-serif;white-space:nowrap}
+.card-vote-slider{display:block;width:100%;margin:17px 0 13px;cursor:pointer;accent-color:var(--gold);background:transparent}
+.card-vote-bottom{min-height:24px}
+.card-vote-bottom small{font-size:11px;color:#a89b94}
+.vote-reset{font-size:11px;font-weight:700;border:1px solid #846854;background:transparent;color:#f6cc9c;white-space:nowrap;border-radius:999px;padding:7px 12px;cursor:pointer}
+.vote-reset:hover{background:#443027}
+.chart-card.has-local-vote{border-color:#aa7d50}
+.chart-card.has-local-vote .chart-top span:last-child{color:var(--gold)}
+.survey-disclaimer{max-width:800px;line-height:1.55}
+.quote-heading{margin-bottom:20px}
+.testimonial-slider{max-width:870px;margin:0 auto;position:relative;display:block}
+.testimonial-content{min-height:280px;display:flex;flex-direction:column;position:relative;padding:40px 46px 28px;background:linear-gradient(145deg,#291d1e,#181416);border:1px solid #715246;border-radius:14px;box-shadow:0 20px 45px rgba(0,0,0,.12)}
+.testimonial-quote-symbol{color:var(--gold);font:700 92px "Space Grotesk",sans-serif;line-height:.6;display:block;height:52px}
+.featured-quote{border:0;margin:10px 0 24px;padding:0;max-width:760px;color:#f2e5da;font-size:clamp(19px,2.6vw,28px);line-height:1.55;letter-spacing:-.015em;font-weight:500;overflow-wrap:anywhere;white-space:normal}
+.testimonial-expand{display:inline-block;align-self:start;padding:0 0 5px;margin:-10px 0 20px;border:0;border-bottom:1px solid #bc885a;background:transparent;color:var(--gold);font-size:13px;cursor:pointer;font-weight:800}
+.testimonial-expand[hidden]{display:none}
+.testimonial-bottom{margin-top:auto;display:flex;align-items:center;justify-content:space-between;gap:14px;padding-top:20px;border-top:1px solid rgba(255,255,255,.1)}
+.testimonial-bottom span:first-child{font-size:12px;font-weight:800;letter-spacing:.14em;color:var(--gold)}
+.testimonial-category{font-size:10px;letter-spacing:.1em;color:#948079}
+.testimonial-nav{display:flex;justify-content:center;align-items:center;gap:24px;margin-top:24px}
+.testimonial-arrow{height:46px;width:54px;cursor:pointer;font-size:23px;border:1px solid #866446;border-radius:9px;color:var(--gold);background:#241b1b;transition:background .15s,transform .15s}
+.testimonial-arrow:hover{background:#432f28;transform:translateY(-2px)}
+#quote-counter{font-size:13px;letter-spacing:.1em;color:#efc79e;font-weight:800;min-width:70px;text-align:center}
+.media-card{min-width:0}
+.media-card .book-cover-wrap{display:block!important;position:relative!important;width:100%!important;height:auto!important;aspect-ratio:3/4!important;min-width:0!important;padding:0!important;overflow:hidden!important;box-sizing:border-box;background:#100e11!important}
+.media-card .book-cover-wrap:after{display:none!important}
+.media-card .book-cover-wrap img{display:block!important;position:absolute!important;inset:0!important;width:100%!important;height:100%!important;max-width:100%!important;max-height:100%!important;min-width:0!important;min-height:0!important;object-fit:contain!important;object-position:center center!important;transform:none!important}
+@media(max-width:760px){
+ .testimonial-content{min-height:275px;padding:30px 25px 24px}
+ .featured-quote{font-size:20px}
+ .testimonial-category{font-size:9px}
+ .card-vote{padding-top:18px}
+ .chart-card .chart-answer{min-height:85px}
+ .media-card .book-cover-wrap{aspect-ratio:3/4!important}
+}
+@media(max-width:400px){.testimonial-bottom{display:block}.testimonial-category{display:block;margin-top:8px}.testimonial-content{min-height:275px;padding:26px 20px}.featured-quote{font-size:19px}}
