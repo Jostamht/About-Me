@@ -29,3 +29,6 @@ Sin compilación: abrir `index.html` en cualquier navegador moderno.
 ## Social preview (WhatsApp, Facebook y X)
 
 Los metadatos Open Graph se definen directamente en el `<head>` de `index.html`. La imagen horizontal `assets/about-me-share-2026.jpg` (1200×630 JPEG optimizado) es el arte para compartir la web. La dirección canónica es `https://jostamht.github.io/About-Me/`. Si WhatsApp conserva una imagen antigua en caché, prueba a compartir el enlace con un parámetro inocuo como `?v=20261029`.
+
+## Ampliación de cosas buenas — 30 de octubre de 2026
+La galería tiene seis categorías en ambas selecciones: anime, libro, videojuego, manga, series y películas. Se usan las portadas suministradas por el autor: The Mandalorian y The Wonderfools (series); Iron Man y Spider-Man: Brand New Day (películas); Death Stranding en reemplazo de Portal 2 (videojuego favorito). Las tarjetas usan una relación 2:3 y `object-fit: cover` centrado.

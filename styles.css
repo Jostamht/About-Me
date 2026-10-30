@@ -274,3 +274,51 @@
 @media (min-width:761px) and (max-width:930px){
   .story-section .timeline.milestone-rail .timeline-info strong{font-size:12px}
 }
+
+/* Six cultural categories arranged as a responsive poster gallery. */
+.taste-section .media-grid-six{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  column-gap:20px;
+  row-gap:35px;
+}
+.taste-section .media-grid-six .media-card{
+  min-width:0;
+  display:flex;
+  flex-direction:column;
+}
+.taste-section .media-grid-six .book-cover-wrap{
+  width:100%!important;
+  aspect-ratio:2/3!important;
+  overflow:hidden!important;
+  border:1px solid rgba(255,255,255,.18);
+  border-radius:4px;
+  background:#0e0c0e!important;
+  position:relative!important;
+}
+.taste-section .media-grid-six .book-cover-wrap img{
+  width:100%!important;
+  height:100%!important;
+  position:absolute!important;
+  inset:0!important;
+  display:block!important;
+  object-fit:cover!important;
+  object-position:center center!important;
+  transform:none!important;
+}
+.taste-section .media-grid-six .media-card h4{
+  font-size:clamp(17px,2vw,23px);
+  line-height:1.25;
+  overflow-wrap:break-word;
+}
+.taste-section .media-grid-six .media-type{
+  margin-top:14px;
+}
+@media (max-width:760px){
+  .taste-section .media-grid-six{grid-template-columns:repeat(2,minmax(0,1fr));gap:24px 13px}
+  .taste-section .media-grid-six .media-card h4{font-size:clamp(15px,4.5vw,19px)}
+  .taste-section .media-grid-six .media-type{font-size:9px}
+}
+@media(max-width:370px){
+  .taste-section .media-grid-six{column-gap:10px}
+}
